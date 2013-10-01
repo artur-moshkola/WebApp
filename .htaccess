@@ -1,0 +1,9 @@
+php_flag magic_quotes_gpc Off
+
+RewriteEngine On
+RewriteRule ^resources/(.*)$ templates/res/$1 [L]
+RewriteCond %{REQUEST_URI} !^/templates/res/
+RewriteRule . index.php [L]
+
+php_value display_errors 1
+php_value error_reporting 30719
